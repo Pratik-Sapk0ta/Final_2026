@@ -12,7 +12,15 @@ public class Month {
 
     }
 
-    p
+    public void subtractDay(int index) {
 
+    }
 
+    public ArrayList<Interger> getDaysTemp() {
+        return new ArrayList<>(daysTemp)
+    }
+
+    public int getSize() {
+        return
+    }
 }
