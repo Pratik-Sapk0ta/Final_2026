@@ -5,10 +5,10 @@ public class TemperatureCalculator {
     private int dayIndex = 0;
 
     //testing
-    public void setTemperatures(int temps){
+    public void setTemperatures(int[]){
 
         if (dayIndex >= 30){
-            throw new IllegalArgumentException("All 30 days are already filled.")
+            throw new IllegalArgumentException("All 30 days are already filled.");
         }
 
         temp[dayIndex] = temps;
@@ -24,6 +24,9 @@ public class TemperatureCalculator {
     // Find they highest temperature.
 
     private int findHighest(int[] temps) {
+
+        validate()
+
         int max = temps[0];
 
         for (int i = 0; i < temps.length; i++) {
@@ -38,7 +41,10 @@ public class TemperatureCalculator {
     }
 
     //Find the lowest temperature.
-    public int finLowest(int[] temps){
+    public int findLowest(int[] temps){
+
+        validate()
+
         int min = temps[0];
 
         for (int i = 0; i < temps.length; i++) {
@@ -53,15 +59,39 @@ public class TemperatureCalculator {
         return min;
     }
 
+    //Calculate average
     public double calculateAverage(int[] temps){
+
+        validate();
+
         int sum = 0;
+
+        for (int i = 0; i < temp.length; i ++) {
+            sum +=temps[i];
+        }
 
         return sum;
     }
 
     public ArrayList<Integer> findDaysAboveAverage(int[] temps) {
+
+        validate()
+
         ArrayList<Integer> daysAboveAverage = new ArrayList<>();
+        double avg = calculateAverage();
+
+        for (int i = 0; i < temp.length; i++){
+            if (temp[i] > avg) {
+                daysAboveAverage.add(i + 1);
+            }
+        }
 
         return  daysAboveAverage;
+    }
+
+    private void validate(){
+        if (dayIndex < 30){
+            throw new IllegalArgumentException("Please enter all 30 tempertures first.");
+        }
     }
 }
