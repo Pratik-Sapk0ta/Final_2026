@@ -6,12 +6,13 @@ public class WeatherDriver {
 
     public static void main(String[] args) {
 
-        WeatherGUI myFrame = new WeatherGUI();
+        WeatherGUI viewer = new WeatherGUI();
+        Month model = new Month();
+        TemperatureCalculator calc = new TemperatureCalculator();
 
-
-        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.pack();
-        myFrame.setVisible(true);
+        viewer.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        viewer.pack();
+        viewer.setVisible(true);
 
 
     }

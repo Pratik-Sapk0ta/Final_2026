@@ -1,4 +1,5 @@
 package org.example;
+package model;
 
 public class Month {
 
