@@ -13,7 +13,5 @@ public class WeatherDriver {
         viewer.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         viewer.pack();
         viewer.setVisible(true);
-
-
     }
 }
