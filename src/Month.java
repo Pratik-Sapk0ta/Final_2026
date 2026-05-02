@@ -1,6 +1,8 @@
 package org.example;
 
 public class Month {
+
+
     private ArrayList<Integer> dayTemp;
 
     public Month();
@@ -23,4 +25,6 @@ public class Month {
     public int getSize() {
         return
     }
+
+
 }
